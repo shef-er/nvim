@@ -2,12 +2,11 @@
 "" Plugins
 ""---------------------------------------
 
-let s:plug_file = '~/.config/nvim/autoload/plug.vim'
 let s:plug_dir = '~/.local/share/nvim/plugged'
 
 "" Plug automatic installation
-if empty(glob(s:plug_file))
-  silent !curl -fLo plug_filename --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
